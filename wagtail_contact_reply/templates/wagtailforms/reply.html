@@ -1,0 +1,30 @@
+{% extends "wagtailadmin/base.html" %}
+{% load i18n %}
+{% block titletag %}{% trans "Reply to Submission" %}{% endblock %}
+{% block bodyclass %}menu-explorer{% endblock %}
+
+{% block content %}
+
+    {% trans "Reply to Submission" as reply_str %}
+    {% include "wagtailadmin/shared/header.html" with title=reply_str subtitle=page.title icon="mail" %}
+
+    <div class="nice-padding">
+        <h1>{% trans "Original Message" %}</h1>
+        <p>
+            {% for key, value in submission %}
+                <div>
+                    <strong>{{ key }}:</strong> {{ value }}
+                </div>
+            {% endfor %}
+        </p>
+
+        <form action="" method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button class="button button-longrunning" data-clicked-text="{% trans 'Sending email' %}">
+                <span class="icon icon-spinner"></span>
+                <em>{% trans 'Reply' %}</em>
+            </button>
+        </form>
+    </div>
+{% endblock %}

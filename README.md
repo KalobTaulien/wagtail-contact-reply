@@ -33,6 +33,8 @@ Things I want to do with this package but may or may not get the time to do...
 - [ ] Create default settings to fallback on
 - [ ] Add JavaScript form validation (ie. If the form is trying to be submitted but is missing a required field, show an alert box above the button)
 - [ ] A few standard tests for at least _some_ coverage
+- [ ] Add an autoresponding feature (worth discussing!)
+- [ ] Add a checkmark if the form submission has a direct reply
 
 ### Contibutors
 - [x] Kalob Taulien
